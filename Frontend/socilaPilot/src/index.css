@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+}
 
 :root {
   font-family: 'DM Sans', sans-serif;
   color: #232137;
-  background: #f8f8fb;
+  background: #070b16;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,3 +30,9 @@ button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .65; }
 a { color: inherit; }
 ::selection { color: #fff; background: #9076ec; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+.landing-page { font-family: 'DM Sans', sans-serif; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

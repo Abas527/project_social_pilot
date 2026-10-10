@@ -11,6 +11,7 @@ type AppShellProps = {
   onNavigate: (page: Page) => void
   onSelectProject: (projectId: string) => void
   onNewProject: () => void
+  onBackToLanding: () => void
 }
 
 const navigation: { page: Page; icon: string }[] = [
@@ -34,6 +35,7 @@ export function AppShell({
   onNavigate,
   onSelectProject,
   onNewProject,
+  onBackToLanding,
 }: AppShellProps) {
   return (
     <div className="app-shell">
@@ -93,6 +95,7 @@ export function AppShell({
         <header className="topbar">
           <div className="breadcrumbs"><span>Workspace</span><b>/</b><strong>{page}</strong></div>
           <div className="top-actions">
+            <button className="workspace-home-link" onClick={onBackToLanding}>← Product site</button>
             {projects.length > 0 && (
               <label className="project-select-wrap">
                 <span className="sr-only">Select project</span>

@@ -1,5 +1,5 @@
 #root { min-height: 100vh; }
-.app-shell { min-height: 100vh; }
+.app-shell { min-height: 100vh; color: #232137; background: #f8f8fb; }
 .sidebar { width: 248px; padding: 27px 16px 16px; position: fixed; inset: 0 auto 0 0; z-index: 4; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #efeff4; }
 .brand { display: flex; align-items: center; gap: 10px; margin: 0 8px 31px; text-decoration: none; }
 .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: #fff; background: linear-gradient(145deg, #a68cf5, #704add); font: 800 12px 'Manrope', sans-serif; box-shadow: 0 5px 11px #8263dc42; transform: rotate(-5deg); }
@@ -43,6 +43,8 @@
 .breadcrumbs b { color: #d0ced7; font-weight: 400; }
 .breadcrumbs strong { color: #49465d; font-weight: 600; }
 .top-actions { display: flex; align-items: center; gap: 15px; }
+.workspace-home-link { padding: 6px 9px; border: 1px solid #eeedf3; border-radius: 6px; color: #716b85; background: #fff; font-size: 10px; }
+.workspace-home-link:hover { color: #6848d5; border-color: #cfc4f5; }
 .project-select-wrap select { max-width: 175px; padding: 8px 26px 8px 10px; border: 1px solid #eeedf3; border-radius: 7px; color: #625f72; background: #fff; font-size: 10px; }
 .top-avatar { width: 30px; height: 30px; color: #fff; background: linear-gradient(140deg, #b49ef5, #7656df); }
 .page-content { max-width: 1280px; margin: 0 auto; padding: 38px 42px 54px; }

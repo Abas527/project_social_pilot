@@ -6,6 +6,7 @@ import { CaseStudyPage } from './pages/CaseStudyPage'
 import { ContentStudioPage } from './pages/ContentStudioPage'
 import { EmptyOverview, ProjectOverview } from './pages/OverviewPage'
 import { SourcesPage } from './pages/SourcesPage'
+import { HomePage } from './pages/HomePage'
 import {
   api,
   caseStudyFilename,
@@ -34,6 +35,7 @@ function getErrorMessage(cause: unknown, fallback: string): string {
 }
 
 function App() {
+  const [showLanding, setShowLanding] = useState(true)
   const [page, setPage] = useState<Page>('Overview')
   const [projects, setProjects] = useState<ProjectSummary[]>([])
   const [project, setProject] = useState<ProjectDetail | null>(null)
@@ -203,6 +205,15 @@ function App() {
     setNotice('')
   }
 
+  const openWorkspace = () => {
+    setShowLanding(false)
+    window.scrollTo({ top: 0 })
+  }
+
+  if (showLanding) {
+    return <HomePage onOpenWorkspace={openWorkspace} />
+  }
+
   return (
     <>
       <AppShell
@@ -214,6 +225,10 @@ function App() {
         onNavigate={navigate}
         onSelectProject={setProjectId}
         onNewProject={() => setShowImport(true)}
+        onBackToLanding={() => {
+          setShowLanding(true)
+          window.scrollTo({ top: 0 })
+        }}
       >
         <div className="page-content">
           <FeedbackMessages
