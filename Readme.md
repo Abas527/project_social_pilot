@@ -9,6 +9,7 @@ The repository contains a React frontend and a Python API. The API handles proje
 ## Contents
 
 - [Features](#features)
+- [Blockchain and creator payments](#blockchain-and-creator-payments)
 - [How it works](#how-it-works)
 - [Technology stack](#technology-stack)
 - [Repository layout](#repository-layout)
@@ -63,6 +64,44 @@ Evidence checks are intended to assist review; they are not a guarantee that a s
 
 - Export case studies as Markdown.
 - Export case studies as PDF when the Typst CLI is installed and available on `PATH`.
+
+## Blockchain and creator payments
+
+Blockchain is a **proposed product direction** for SocialPilot AI, focused on helping developers receive direct support for their work. The landing page includes an illustrative payment concept; it is not a live wallet or payment integration.
+
+### Intended use cases
+
+- **Creator tips:** A supporter could send a voluntary payment directly to a developer's wallet.
+- **Developer work purchases:** A buyer could pay for a creator's software, plugin, library, or service.
+- **Public transaction records:** Once confirmed, a transfer could be inspected on its network using the transaction reference.
+
+### Proposed user flow
+
+```text
+Supporter chooses a tip or listed item
+                 |
+                 v
+       Review recipient and amount
+                 |
+                 v
+   Approve transfer with a compatible wallet
+                 |
+                 v
+      Network confirms the transaction
+                 |
+                 v
+ Creator receives payment / buyer follows delivery details
+```
+
+The product concept emphasizes creator-controlled keys: a user's wallet would approve transactions, rather than SocialPilot collecting the creator's private key. Wallet choice, supported network, transaction fees, payment handling, and purchase fulfillment would need to be defined and implemented before this flow could be used.
+
+### What blockchain can and cannot establish
+
+A public chain can provide a record that a wallet address submitted a transaction and that the network confirmed it. By itself, it does **not** establish a person's real-world identity, prove who authored a project, verify a product's quality, guarantee delivery, or validate technical claims. Those responsibilities require separate product processes and user review.
+
+### Implementation status
+
+There is currently **no blockchain integration in the runnable application**: no wallet connection, smart contract, transaction submission, network configuration, or on-chain marketplace. The landing-page payment panel is a visual concept only. Do not use it to send funds or treat its sample products and amounts as real offers.
 
 ## How it works
 
